@@ -18,8 +18,8 @@ import {
   Ban,
 } from 'lucide-react';
 
-const formatCurrency = (value: number, currency = 'USD') =>
-  new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(value);
+const formatCurrency = (value: number, currency = 'INR') =>
+  new Intl.NumberFormat('en-IN', { style: 'currency', currency, maximumFractionDigits: 0 }).format(value);
 
 const getRoleColor = (role: string) => {
   switch (role) {
@@ -288,7 +288,7 @@ const WorkflowCard: React.FC<WorkflowCardProps> = ({ workflow, onAction }) => {
           )}
           <span className="text-slate-300 mx-1.5">•</span>
           <span className="font-mono text-[10px]">
-            {new Date(workflow.createdAt).toLocaleDateString('en-US', {
+            {new Date(workflow.createdAt).toLocaleDateString('en-IN', {
               month: 'short',
               day: 'numeric',
               year: 'numeric',

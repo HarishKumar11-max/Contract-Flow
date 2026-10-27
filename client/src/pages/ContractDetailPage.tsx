@@ -139,9 +139,9 @@ export const ContractDetailPage: React.FC<ContractDetailPageProps> = ({ contract
   };
 
   const formatCurrency = (val: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-IN', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'INR',
       maximumFractionDigits: 0,
     }).format(val);
   };
@@ -531,10 +531,10 @@ export const ContractDetailPage: React.FC<ContractDetailPageProps> = ({ contract
               </h4>
               <p className="text-xs text-slate-500 mt-0.5">
                 {contract.value < 25000
-                  ? 'Tier 1 (<$25k): Single-stage Legal sign-off required'
+                  ? 'Tier 1 (<₹25k): Single-stage Legal sign-off required'
                   : contract.value <= 100000
-                  ? 'Tier 2 ($25k-$100k): Two-stage Legal → Finance sign-off required'
-                  : 'Tier 3 (>$100k): Three-stage Legal → Finance → Executive Approver sign-off required'}
+                  ? 'Tier 2 (₹25k-₹1L): Two-stage Legal → Finance sign-off required'
+                  : 'Tier 3 (>₹1L): Three-stage Legal → Finance → Executive Approver sign-off required'}
               </p>
             </div>
             {!workflow && (contract.status === 'Draft' || contract.status === 'In Review') && canCreateContract && (

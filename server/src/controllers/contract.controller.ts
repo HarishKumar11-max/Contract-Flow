@@ -12,7 +12,7 @@ export const createContractSchema = z.object({
   type: z.enum(['MSA', 'NDA', 'SOW', 'SLA', 'Vendor Agreement', 'Employment', 'License', 'Other']),
   vendorId: z.string().min(1, 'Vendor ID is required'),
   value: z.number().min(0, 'Value must be greater than or equal to 0'),
-  currency: z.string().optional().default('USD'),
+  currency: z.string().optional().default('INR'),
   startDate: z.string().min(1, 'Start date is required'),
   endDate: z.string().min(1, 'End date is required'),
   renewalType: z.enum(['Auto-Renew', 'Manual Review', 'Do Not Renew']).optional().default('Manual Review'),

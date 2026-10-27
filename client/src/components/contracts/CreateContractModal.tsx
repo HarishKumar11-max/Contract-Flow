@@ -27,7 +27,7 @@ export const CreateContractModal: React.FC<CreateContractModalProps> = ({
   const [type, setType] = useState<ContractType>('Vendor Agreement');
   const [vendorId, setVendorId] = useState('');
   const [value, setValue] = useState<number>(25000);
-  const [currency, setCurrency] = useState('USD');
+  const [currency, setCurrency] = useState('INR');
   const [startDate, setStartDate] = useState(new Date().toISOString().split('T')[0]);
   const [endDate, setEndDate] = useState(
     new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]

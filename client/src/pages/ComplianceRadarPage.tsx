@@ -31,8 +31,8 @@ interface ComplianceRadarPageProps {
   onSelectContract?: (contractId: string) => void;
 }
 
-const formatCurrency = (val: number, cur = 'USD') =>
-  new Intl.NumberFormat('en-US', { style: 'currency', currency: cur, maximumFractionDigits: 0 }).format(val);
+const formatCurrency = (val: number, cur = 'INR') =>
+  new Intl.NumberFormat('en-IN', { style: 'currency', currency: cur, maximumFractionDigits: 0 }).format(val);
 
 export const ComplianceRadarPage: React.FC<ComplianceRadarPageProps> = ({ onSelectContract }) => {
   const { user, hasPermission } = useAuth();

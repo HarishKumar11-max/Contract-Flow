@@ -157,7 +157,7 @@ export const exportContracts = async (req: Request, res: Response): Promise<void
     contracts.forEach((c: any, idx) => {
       if (doc.y > 740) { doc.addPage(); }
       const vendor = c.vendorId?.name || '—';
-      const value = new Intl.NumberFormat('en-US', { style: 'currency', currency: c.currency || 'USD', maximumFractionDigits: 0 }).format(c.value);
+      const value = new Intl.NumberFormat('en-IN', { style: 'currency', currency: c.currency || 'INR', maximumFractionDigits: 0 }).format(c.value);
       const row = [String(idx + 1), c.contractNumber, c.title.slice(0, 20), vendor.slice(0, 14), value, c.status, c.department?.slice(0, 10) || '—'];
       doc.fontSize(7).font('Helvetica').fillColor('#334155');
       row.forEach((cell, i) => {
